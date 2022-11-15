@@ -6,9 +6,14 @@ function handleSubmit(event) {
     event.preventDefault();
     const { email, password } = event.currentTarget
     
-    if (email.value === "" || password.valee === "") {
-       console.log("Please, fill in all the fields!");
+    if (email.value === "" || password.value === "") {
+        alert ("Please, fill in all the fields!");
     } else
 
-        console.log(`Login: ${email.value}, Password: ${password.value}`)}
+        console.log({
+            Login: email.value,
+            Password: password.value
+        })
+    form.reset();
+}
 

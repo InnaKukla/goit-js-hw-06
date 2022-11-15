@@ -2,7 +2,8 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-// Напиши скрипт создания и очистки коллекции элементов.Пользователь вводит количество элементов в input и нажимает кнопку Создать, после чего 
+// Напиши скрипт создания и очистки коллекции элементов.Пользователь вводит количество 
+// элементов в input и нажимает кнопку Создать, после чего 
 // рендерится коллекция.При нажатии на кнопку Очистить, коллекция элементов очищается.
 // Создай функцию createBoxes(amount), которая принимает один параметр - число. Функция 
 // создает столько < div >, сколько указано в amount и добавляет их в div#boxes.
@@ -21,15 +22,15 @@ const refs = {
   boxEl: document.querySelector("#boxes"),
 }
 refs.btnElCreate.addEventListener('click', onBtnCreateElClick);
-refs.btnElDestroy.addEventListener('click', removeBoxes)
+// refs.btnElDestroy.removeEventListener('click', onBtnDestroyElClick)
 
 
 const getInputValue = () => Number(refs.inputEl.value);
 // const changeSize =() => 
 
 function createBoxes(amount) {
-  let boxSize = 30;
-  let str = `<div style = width =${boxSize}px height =${boxSize}px`
+  let boxSize = "30px";
+  // let str = `<div style = width =${boxSize}px height =${boxSize}px`
 }
 function onBtnCreateElClick() {
   const boxes = [];
@@ -42,8 +43,6 @@ function onBtnCreateElClick() {
     const box = document.createElement("div");
    
     
-
-
     box.style.backgroundColor = color;
     // box.style.width = `${boxSize}px + 10 px'`;
     
@@ -51,9 +50,13 @@ function onBtnCreateElClick() {
   }
   
   refs.boxEl.append(...boxes);
+
   console.log(boxes)
 }
-
+// function onBtnDestroyElClick(event) {
+//   refs.inputEl.currentTarget.reset();
+//   refs.boxEl.reset()
+// }
 
 
 // const inputEl = document.querySelector("#controls input")
